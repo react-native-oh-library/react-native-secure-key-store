@@ -1,6 +1,6 @@
 {
   "name": "@react-native-ohos/react-native-secure-key-store",
-  "version": "2.0.10",
+  "version": "2.0.11-rc.1",
   "description": "React Native Secure Key Store for HarmonyOS",
   "main": "src/main/ets/index.ets",
   "author": "",
