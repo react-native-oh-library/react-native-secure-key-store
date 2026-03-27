@@ -1,6 +1,6 @@
 {
   "name": "@react-native-ohos/react-native-secure-key-store",
-  "version": "2.0.11-rc.1",
+  "version": "2.0.11",
   "description": "React Native Library for securely storing keys to iOS, Android and HarmonyOS devices in KeyChain, KeyStore and HUKS respectively.",
   "main": "index.js",
   "publishConfig": { 
