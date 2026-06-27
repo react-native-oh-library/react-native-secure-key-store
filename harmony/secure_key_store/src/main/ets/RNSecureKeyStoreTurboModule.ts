@@ -8,6 +8,7 @@ import { TM } from './generated/ts';
 import huks from '@ohos.security.huks';
 import util from '@ohos.util';
 import preferences from '@ohos.data.preferences';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { BusinessError } from '@ohos.base';
 // 加密存储的服务名称
 const SERVICE_NAME = 'RNSecureKeyStoreHarmony';
@@ -204,11 +205,9 @@ export class RNSecureKeyStoreTurboModule extends TurboModule implements TM.RNSec
    * 生成随机 IV (12 bytes for GCM)
    */
   private generateRandomIV(): Uint8Array {
-    const iv = new Uint8Array(12);
-    for (let i = 0; i < 12; i++) {
-      iv[i] = Math.floor(Math.random() * 256);
-    }
-    return iv;
+    const random = cryptoFramework.createRandom(); 
+    const randomData = random.generateRandomSync(12); 
+    return new Uint8Array(randomData.data); 
   }
 
   /**
